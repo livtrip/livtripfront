@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<link rel="stylesheet" type="text/css" media="all" href="style/daterangepicker.css" />
+<script type="text/javascript" src="js/moment.js"></script>
+<script type="text/javascript" src="js/daterangepicker.js"></script>
+
+
+<title>search form</title>
+</head>
+
+<body>
+<form class="form-inline" role="form">
+	<div class="form-group">
+		<input type="text" class="form-control" id="des" placeholder="目的地">
+	</div>
+	
+	<div class="input-group">
+	  <input type="text" class="form-control" id="startDate" placeholder="入住时间"/>
+	  <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+	</div>
+	<div class="input-group">
+	  <input type="text" class="form-control" id="endDate" placeholder="退房时间"/>
+	  <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+	</div>
+	<div class="input-group">
+	  <input type="text" class="form-control" id="name" placeholder="1间客房 2成人 0 儿童"/>
+	  <span class="input-group-addon"><i class="fa fa-angle-down"></i></span>
+	</div>
+	
+	<button type="submit" class="btn btn-info" style="width:130px;">搜索</button>
+</form>
+ 
+ <script type="text/javascript">
+$(document).ready(function() {
+
+	$('#startDate').daterangepicker({
+	  singleDatePicker: true,
+	  startDate: moment().subtract(6, 'days')
+	});
+	
+	$('#endDate').daterangepicker({
+	  singleDatePicker: true,
+	  startDate: moment()
+	});
+});
+</script>
+
+ 
+</body>
+</html>
