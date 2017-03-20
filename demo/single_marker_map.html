@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>单点</title>
+<script src="http://g.alicdn.com/sj/lib/jquery/dist/jquery.min.js"></script>
+<script src='http://maps.google.cn/maps/api/js?key=AIzaSyAjNbgkCbR5VzzBw2VsJagYKBASIJoa2iw' type="text/javascript"></script>
+
+<script type="text/javascript">
+function loadMap(){
+    var smallMap = null;
+    var largeMap = null;
+    var lat = $("#lat").html();
+    var lng = $("#lng").html();
+
+    var myLatlng = new google.maps.LatLng(lat,lng);
+    var myOptions = {
+        zoom: 10,
+        center: myLatlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        scaleControl : false,
+        mapTypeControl : false,
+        zoomControlOptions: {
+            style: google.maps.ZoomControlStyle.BIG,
+            position: google.maps.ControlPosition.LEFT_TOP
+        }
+    }
+  
+    largeMap = new google.maps.Map(document.getElementById("large_map"), myOptions);
+    setMarkers(smallMap, lat, lng);
+    setMarkers(largeMap, lat, lng);
+}
+
+function setMarkers(map, lat,lng) {
+    var myLatLng = new google.maps.LatLng(lat, lng);
+    var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        icon:'https://raw.githubusercontent.com/Concept211/Google-Maps-Markers/master/images/marker_red.png',
+        title: "香港酒店",
+    });
+    showinfomessage(marker,map);
+}
+var prev_infowindow =false;
+function showinfomessage(marker, map)
+{
+    var html = $("#address_text").html();
+    var infowindow = new google.maps.InfoWindow({
+        content:html
+    });
+    google.maps.event.addListener(marker, 'click', function(event) {
+        if(prev_infowindow){
+            prev_infowindow.close();
+        }
+        prev_infowindow = infowindow;
+        infowindow.open(map,marker);
+    });
+
+}
+</script>
+</head>
+
+<body>
+<div style="display:none" id="lat">31.2112</div>
+<div style="display:none" id="lng">42.2112</div>
+<div style="display:none" id="address_text">chingdasdsadsa</div>
+<div id="small_map" style=" width:400px; height:300px; border:1px solid #000000;">
+</div>
+
+</body>
+</html>

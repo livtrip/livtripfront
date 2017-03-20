@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>产品详情页</title>
+<link rel="stylesheet" href="../style/admin.css"/>
+<link rel="stylesheet" href="http://g.alicdn.com/sui/sui3/0.0.2/old/css/icons.min.css"/>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+<link rel="stylesheet" href="http://g.alicdn.com/sui/sui3/0.0.18/css/sui.min.css">
+<script type="text/javascript" src="http://g.alicdn.com/sj/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="http://g.alicdn.com/sui/sui3/0.0.18/js/sui.min.js"></script>
+<script src='http://maps.google.cn/maps/api/js?key=AIzaSyAjNbgkCbR5VzzBw2VsJagYKBASIJoa2iw' type="text/javascript"></script>
+</head>
+
+<body>
+<div class="container">
+	<ol class="breadcrumb">
+	  <li><a href="#">后台管理</a></li>
+	  <li><a href="javascription.hsitory(-1);">产品列表</a></li>
+	  <li class="active">产品详情页</li>
+	</ol>
+
+	<div role="tabpanel">
+
+	  <!-- Nav tabs -->
+	  <ul class="nav nav-tabs" role="tablist">
+		<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">基础信息</a></li>
+		<li role="presentation"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">详情描述</a></li>
+		<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">图片资源</a></li>
+		<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">地理位置</a></li>
+		<li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">房型数据</a></li>
+	  </ul>
+	
+	  <!-- Tab panes -->
+	  <div class="tab-content">
+		<div role="tabpanel" class="tab-pane active" id="home">
+			<form class="form-horizontal" style="margin:20px 0px;">
+			 	 <div class="form-group form-group-sm">
+					<label class="col-sm-2 control-label" for="product_name">产品名称</label>
+					<div class="col-sm-10">
+					  <input class="form-contro form-group-lg" type="text" id="product_name" />
+					</div>
+				  </div>
+				  <div class="form-group form-group-sm">
+					<label class="col-sm-2 control-label" for="hotel_id">酒店ID</label>
+					<div class="col-sm-10">
+					  <input class="form-contro form-group-sm" type="text" id="hotel_id" />
+					</div>
+				  </div>
+				  <div class="form-group form-group-sm">
+					<label class="col-sm-2 control-label" for="star">星级</label>
+					<div class="col-sm-10">
+					  <input class="form-contro form-group-sm" type="text" id="star" />
+					</div>
+				  </div>
+				  <div class="form-group form-group-sm">
+					<label class="col-sm-2 control-label" for="hotel_brand">酒店品牌</label>
+					<div class="col-sm-10">
+					  <input class="form-contro form-group-sm" type="text" id="hotel_brand" />
+					</div>
+				  </div>
+				  <div class="form-group form-group-sm">
+					<label class="col-sm-2 control-label" for="currency">计价货币</label>
+					<div class="col-sm-10">
+					  <input class="form-contro form-group-sm" type="text" id="currency" value="USD" />
+					</div>
+				  </div>
+				  <div class="form-group form-group-sm">
+					<label class="col-sm-2 control-label" for="rooms">房间数</label>
+					<div class="col-sm-10">
+					  <input class="form-contro form-group-sm" type="text" id="rooms" value="123" />
+					</div>
+				  </div>
+				  <div class="form-group form-group-sm">
+					<label class="col-sm-2 control-label" for="checkInTime">入住时间</label>
+					<div class="col-sm-10">
+					  <input class="form-contro form-group-sm" type="text" id="checkInTime" value="12" />
+					</div>
+				  </div>
+				  <div class="form-group form-group-sm">
+					<label class="col-sm-2 control-label" for="checkOutTime">退房时间</label>
+					<div class="col-sm-10">
+					  <input class="form-contro form-group-sm" type="text" id="checkOutTime" value="15" />
+					</div>
+				  </div>
+				  <div class="form-group form-group-sm">
+					<label class="col-sm-2 control-label" for="phone">酒店电话</label>
+					<div class="col-sm-10">
+					  <input class="form-contro form-group-sm" type="text" id="phone" value="15" />
+					</div>
+				  </div>
+				  <div class="form-group form-group-sm">
+					<label class="col-sm-2 control-label" for="fax">传真</label>
+					<div class="col-sm-10">
+					  <input class="form-contro form-group-sm" type="text" id="fax" value="15" />
+					</div>
+				  </div>
+				   <button type="submit" class="btn btn-primary" style=" margin-left:150px;">提 交</button>
+			</form>
+		</div>
+		
+		<div role="tabpanel" class="tab-pane" id="description">
+			<form style="margin:20px 0px;">
+			    <div class="form-group">
+					<label for="category">类别</label>
+					<textarea  type="email" class="form-control" id="category" rows="5">dsadasd</textarea>
+			    </div>
+				 <div class="form-group">
+					<label for="category1">类别</label>
+					<textarea  type="email" class="form-control" id="category1" rows="5">dsadasd</textarea>
+			    </div>
+				 <button type="submit" class="btn btn-primary" style=" margin-left:150px;">提 交</button>
+			</form>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="profile">
+			<ul class="product_images_ul">
+				<li>
+					<img src="../images/bhd.jpg" alt="..."/>
+				</li>
+				<li>
+					<img src="../images/bhd.jpg" alt="..."/>
+				</li>
+				<li>
+					<img src="../images/bhd.jpg" alt="..."/>
+				</li>
+				<li>
+					<img src="../images/bhd.jpg" alt="..."/>
+				</li>
+				<li>
+					<img src="../images/bhd.jpg" alt="..."/>
+				</li>
+				<li>
+					<img src="../images/bhd.jpg" alt="..."/>
+				</li>
+				
+			</ul>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="messages">
+			<form class="form-horizontal" style="margin:20px 0px;">
+			 	 <div class="form-group form-group-sm">
+					<label class="col-sm-2 control-label" for="country">国家</label>
+					<div class="col-sm-10">
+					  <input class="form-contro form-group-lg" type="text" id="country" />
+					</div>
+				  </div>
+				  <div class="form-group form-group-sm">
+					<label class="col-sm-2 control-label" for="state">州</label>
+					<div class="col-sm-10">
+					  <input class="form-contro form-group-lg" type="text" id="state" />
+					</div>
+				  </div>
+				  <div class="form-group form-group-sm">
+					<label class="col-sm-2 control-label" for="city">城市</label>
+					<div class="col-sm-10">
+					  <input class="form-contro form-group-lg" type="text" id="city" />
+					</div>
+				  </div>
+				  <div class="form-group form-group-sm">
+					<label class="col-sm-2 control-label" for="address">具体地址</label>
+					<div class="col-sm-10">
+					  <input class="form-contro form-group-lg" type="text" id="address" />
+					</div>
+				  </div>
+				  <div class="form-group form-group-sm">
+					<label class="col-sm-2 control-label" for="latitude">经度</label>
+					<div class="col-sm-10">
+					  <input class="form-contro form-group-lg" type="text" id="latitude" />
+					</div>
+				  </div>
+				  <div class="form-group form-group-sm">
+					<label class="col-sm-2 control-label" for="longitude">纬度</label>
+					<div class="col-sm-10">
+					  <input class="form-contro form-group-lg" type="text" id="longitude" />
+					</div>
+				  </div>
+				   <div class="form-group form-group-sm">
+				   		<div class="hotel_map"></div>
+				   </div>
+				  
+				  <button type="submit" class="btn btn-primary" style=" margin-left:150px;">提 交</button>
+			<form>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="settings">44</div>
+	  </div>
+	
+	</div>
+</div>
+</body>
+</html>
